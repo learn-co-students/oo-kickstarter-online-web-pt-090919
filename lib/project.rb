@@ -1,7 +1,6 @@
 class Project
   attr_reader :backers, :title
-  @@all = []
-  
+
   def initialize(name)
     @title = name
     @backers = []
@@ -13,7 +12,4 @@ class Project
     else backer.back_project(self)
     end
   end
-  
-  
-  
 end
