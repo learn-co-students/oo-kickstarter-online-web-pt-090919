@@ -1,25 +1,14 @@
 describe 'Backer - ::new' do
-  it 'takes a name on initialization, accessible through an attribute reader' do
+  it 'takes a name on initialization' do
     backer = Backer.new("Avi")
     expect(backer.name).to eq("Avi")
   end
-
-  it 'initializes with a @backed_projects attribute, an empty array' do
-    backer = Backer.new("Avi")
-    expect(backer.backed_projects).to eq([])
-  end
 end
 
-
 describe 'Project - ::new' do
-  it 'takes a title on initialization, accessible through an attribute reader' do
+  it 'takes a title on initialization' do
     project = Project.new("Project With So Much Amaze")
     expect(project.title).to eq("Project With So Much Amaze")
-  end
-
-  it 'initializes with a @backers attribute, an empty array' do
-    project = Project.new("Project With So Much Amaze")
-    expect(project.backers).to eq([])
   end
 end
 
@@ -31,6 +20,7 @@ describe 'Backer - #back_project' do
     # If we are calling this method in this way, what type of argument is it taking?
     # We are actually passing in a Project object! Cool, huh?
     spencer.back_project(magic)
+
     expect(spencer.backed_projects).to include(magic)
   end
 end
